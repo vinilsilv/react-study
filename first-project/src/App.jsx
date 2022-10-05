@@ -7,12 +7,17 @@ import Random from "./components/base/Random";
 import Card from "./components/layout/Card";
 import Family from "./components/base/Family";
 import FamilyMember from "./components/base/FamilyMember";
+import StudentsList from "./components/repeat/StudentsList";
 
 export default () => (
   <div className="App">
     <h1>My First React Project</h1>
 
     <div className="cards">
+      <Card title="#05 - Repeat" color="#231651">
+        <StudentsList></StudentsList>
+      </Card>
+
       <Card title="#04 - Family member" color="#ac1616">
         <Family familyName="Washington">
           <FamilyMember name="John" />
