@@ -8,12 +8,17 @@ import Card from "./components/layout/Card";
 import Family from "./components/base/Family";
 import FamilyMember from "./components/base/FamilyMember";
 import StudentsList from "./components/repeat/StudentsList";
+import Products from "./components/repeat/Products";
 
 export default () => (
   <div className="App">
     <h1>My First React Project</h1>
 
     <div className="cards">
+      <Card title="#06 - Products" color="#FF8484">
+        <Products></Products>
+      </Card>
+
       <Card title="#05 - Repeat" color="#231651">
         <StudentsList></StudentsList>
       </Card>
@@ -22,7 +27,7 @@ export default () => (
         <Family familyName="Washington">
           <FamilyMember name="John" />
           <FamilyMember name="Charles" />
-          <FamilyMember name="Peter"/>
+          <FamilyMember name="Peter" />
         </Family>
       </Card>
 
