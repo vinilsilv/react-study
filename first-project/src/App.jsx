@@ -9,12 +9,22 @@ import Family from "./components/base/Family";
 import FamilyMember from "./components/base/FamilyMember";
 import StudentsList from "./components/repeat/StudentsList";
 import Products from "./components/repeat/Products";
+import OddOrEven from "./components/conditional/OddOrEven";
+import UserInfo from "./components/conditional/UserInfo";
 
 export default () => (
   <div className="App">
     <h1>My First React Project</h1>
 
     <div className="cards">
+      <Card title="#07 - Conditional Rendering" color="#B9BAA3">
+        <OddOrEven number={20}></OddOrEven>
+        <UserInfo user={{ name: "Ferdinand" }}></UserInfo>
+        <UserInfo user={{ email: "fer@dinand.com" }}></UserInfo>
+        {/* <UserInfo user={{}}></UserInfo>
+        <UserInfo></UserInfo> */}
+      </Card>
+
       <Card title="#06 - Products" color="#FF8484">
         <Products></Products>
       </Card>

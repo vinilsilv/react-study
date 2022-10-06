@@ -6,7 +6,7 @@ export default (props) => {
   function getProducts() {
     return products.map((product, i) => {
       return (
-        <tr className={i % 2 == 0 ? "even" : "odd"} key={product.id}>
+        <tr className={i % 2 === 0 ? "even" : "odd"} key={product.id}>
           <td>{product.id}</td>
           <td>{product.name}</td>
           <td>R$ {product.price.toFixed(2)}</td>
