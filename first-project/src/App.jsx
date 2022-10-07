@@ -11,12 +11,17 @@ import StudentsList from "./components/repeat/StudentsList";
 import Products from "./components/repeat/Products";
 import OddOrEven from "./components/conditional/OddOrEven";
 import UserInfo from "./components/conditional/UserInfo";
+import DirectParent from "./components/communication/DirectParent";
 
 export default () => (
   <div className="App">
     <h1>My First React Project</h1>
 
     <div className="cards">
+      <Card title="#08 - Direct communication" color="#226CE0">
+        <DirectParent />
+      </Card>
+
       <Card title="#07 - Conditional Rendering" color="#B9BAA3">
         <OddOrEven number={20}></OddOrEven>
         <UserInfo user={{ name: "Ferdinand" }}></UserInfo>
