@@ -1,17 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import IndirectChild from "./IndirectChild";
 
 export default (props) => {
-  let name = "?";
-  let age = 0;
-  let isBusy = false;
+  const [name, setName] = useState("?");
+  let [age, setAge] = useState(0);
+  let [isBusy, setIsBusy] = useState(false);
   // name age isBusy
-  function sendInfo(nameParam, ageParam, isBusyParam) {
-    name = nameParam;
-    age = ageParam;
-    isBusy = isBusyParam;
-
-    console.log(nameParam, ageParam, isBusyParam);
+  function sendInfo(name, age, isBusy) {
+    setName(name);
+    setAge(age);
+    setIsBusy(isBusy);
   }
 
   return (
