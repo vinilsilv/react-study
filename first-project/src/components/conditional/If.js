@@ -20,8 +20,6 @@ export default (props) => {
     return child !== elseChild;
   });
 
-  console.log(ifChildren);
-
   if (props.test) {
     return ifChildren;
   } else if (elseChild) {

@@ -12,12 +12,17 @@ import Products from "./components/repeat/Products";
 import OddOrEven from "./components/conditional/OddOrEven";
 import UserInfo from "./components/conditional/UserInfo";
 import DirectParent from "./components/communication/DirectParent";
+import IndirectParent from "./components/communication/IndirectParent";
 
 export default () => (
   <div className="App">
     <h1>My First React Project</h1>
 
     <div className="cards">
+      <Card title="#09 - Indirect communication" color="#534B62">
+        <IndirectParent />
+      </Card>
+
       <Card title="#08 - Direct communication" color="#226CE0">
         <DirectParent />
       </Card>
