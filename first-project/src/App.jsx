@@ -14,12 +14,17 @@ import UserInfo from "./components/conditional/UserInfo";
 import DirectParent from "./components/communication/DirectParent";
 import IndirectParent from "./components/communication/IndirectParent";
 import Input from "./components/form/Input";
+import Counter from "./components/counter/Counter";
 
 export default () => (
   <div className="App">
     <h1>My First React Project</h1>
 
     <div className="cards">
+      <Card title="#11 - Counter" color="#A04668">
+        <Counter initialNumber={100}></Counter>
+      </Card>
+
       <Card title="#10 - Controlled component" color="#78C3FB">
         <Input></Input>
       </Card>

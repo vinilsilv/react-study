@@ -1,0 +1,15 @@
+.counter input {
+    font-size: 1.4rem;
+}
+
+.counter button {
+    margin: 15px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(92, 189, 221);
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border: none;
+}
