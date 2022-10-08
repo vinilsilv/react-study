@@ -13,12 +13,17 @@ import OddOrEven from "./components/conditional/OddOrEven";
 import UserInfo from "./components/conditional/UserInfo";
 import DirectParent from "./components/communication/DirectParent";
 import IndirectParent from "./components/communication/IndirectParent";
+import Input from "./components/form/Input";
 
 export default () => (
   <div className="App">
     <h1>My First React Project</h1>
 
     <div className="cards">
+      <Card title="#10 - Controlled component" color="#78C3FB">
+        <Input></Input>
+      </Card>
+
       <Card title="#09 - Indirect communication" color="#534B62">
         <IndirectParent />
       </Card>
