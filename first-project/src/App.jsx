@@ -15,12 +15,17 @@ import DirectParent from "./components/communication/DirectParent";
 import IndirectParent from "./components/communication/IndirectParent";
 import Input from "./components/form/Input";
 import Counter from "./components/counter/Counter";
+import Lottery from "./components/lottery/Lottery";
 
 export default () => (
   <div className="App">
     <h1>My First React Project</h1>
 
     <div className="cards">
+      <Card title="#12 - Lottery" color="#594e7d">
+        <Lottery amount={8} />
+      </Card>
+
       <Card title="#11 - Counter" color="#A04668">
         <Counter initialNumber={100}></Counter>
       </Card>
