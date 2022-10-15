@@ -1,13 +1,16 @@
 import React from "react";
-import Content from "../Components/layout/Content/Content";
+import { BrowserRouter } from 'react-router-dom'
 import Menu from "../Components/layout/Menu/Menu";
+import Content from "../Components/layout/Content/Content";
 import './App.css';
 
 export default props => {
     return (
         <div className="app">
-            <Menu />
-            <Content />
+            <BrowserRouter>
+                <Menu />
+                <Content />
+            </BrowserRouter>
         </div>
     )
 }
