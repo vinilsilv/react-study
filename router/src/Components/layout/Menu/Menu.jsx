@@ -14,6 +14,12 @@ export default props => {
                     <li>
                         <Link to="/about">About</Link>
                     </li>
+                    <li>
+                        <Link to="/param/123">Param #01</Link>
+                    </li>
+                    <li>
+                        <Link to="/param/firstparam/secondparam">Param #02</Link>
+                    </li>
                 </ul>
             </nav>
         </aside>
