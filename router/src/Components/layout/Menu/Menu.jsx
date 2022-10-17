@@ -20,6 +20,9 @@ export default props => {
                     <li>
                         <Link to="/param/firstparam/secondparam">Param #02</Link>
                     </li>
+                    <li>
+                        <Link to="/notfound">Not Found</Link>
+                    </li>
                 </ul>
             </nav>
         </aside>
