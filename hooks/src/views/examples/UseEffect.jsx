@@ -13,13 +13,22 @@ function calcFatorial(n) {
 }
 
 const UseEffect = (props) => {
+
+    // Ex #01
     const [number, setNumber] = useState(1)
     const [fatorial, setFatorial] = useState(1)
+
+    // Ex #02
+    const [oddEven, setOddEven] = useState("Odd")
 
     useEffect(function () {
         setFatorial(calcFatorial(number))
     }, [number])
     // setFatorial(calcFatorial(number))
+
+    useEffect(function () {
+        setOddEven(number % 2 == 0 ? 'Even' : 'Odd')
+    }, [number])
 
     return (
         <div className="UseEffect">
@@ -42,7 +51,10 @@ const UseEffect = (props) => {
 
             <SectionTitle title="Exercicio #02 " />
             <div className="center">
-
+                <div>
+                    <span className="text">The number is </span>
+                    <span className="text red">{oddEven}</span>
+                </div>
             </div>
         </div>
     )
