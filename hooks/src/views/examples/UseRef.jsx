@@ -16,8 +16,6 @@ const UseRef = (props) => {
     const myInput1 = useRef(null)
     const myInput2 = useRef(null)
 
-    console.log(value2[value2.length -1])
-
     useEffect(function () {
         count.current++
         myInput2.current.focus()
