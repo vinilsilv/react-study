@@ -12,6 +12,7 @@ export default function Home() {
             <Navigator goTo="/stylish" text="Stylish" color="crimson" />
             <Navigator goTo="/example" text="Example" color="purple" />
             <Navigator goTo="/jsx" text="JSX" />
+            <Navigator goTo="/navigation" text="Navigation #01" color="green"/>
         </div>
     )
 }
