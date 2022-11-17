@@ -3,6 +3,8 @@
 export default function handler(req, res) {
   res.status(200).json({
     name: 'John Doe',
-    method: req.method
+    method: req.method,
+    name: req.query.name,
+    age: +req.query.age
   })
 }
