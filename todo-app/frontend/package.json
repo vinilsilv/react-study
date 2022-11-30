@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpacl-dev-server --progress --colors --inline --hot",
+    "production": "webpacl --progress -p"
   },
   "keywords": [],
   "author": "",
