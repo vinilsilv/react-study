@@ -10,12 +10,14 @@ export default props => {
         <span>
           <strong>Min.: </strong>
           <input 
+            readOnly
             type="number"
             value={10} />
         </span>
         <span>
           <strong>Max.: </strong>
           <input
+            readOnly
             type="number"
             value={11} />
         </span>
