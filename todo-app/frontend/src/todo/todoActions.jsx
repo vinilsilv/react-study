@@ -8,10 +8,11 @@ export const changeDescription = event => ({
 })
 
 export const search = () => {
-  const request = axios.get(`${URL}?sort=createdAt`)
-  return {
-    type: 'TODO_SEARCHED',
-    payload: request
+  return (dispatch, getState) => {
+    const description = getState().todo.description
+    const search = description ? `&description__regex=/${description}/` : ''
+    axios.get(`${URL}?sort=-createdAt${search}`)
+      .then(res => dispatch({ type: 'TODO_SEARCHED', payload: res.data }))
   }
 }
 
@@ -26,7 +27,7 @@ export const add = (description) => {
 export const markAsDone = (todo) => {
   return dispatch => {
     axios.put(`${URL}/${todo._id}`, { ...todo, done: true })
-      .then(_ => dispatch(search()))
+      .then(_ => dispatch(search(description)))
   }
 }
 
@@ -45,7 +46,5 @@ export const remove = (todo) => {
 }
 
 export const clear = () => {
-  return {
-    type: 'TODO_CLEAR'
-  }
+  return [{ type: 'TODO_CLEAR' }, search()]
 }

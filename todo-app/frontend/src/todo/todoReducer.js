@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
     case 'TODO_SEARCHED':
       return {
         ...state,
-        list: action.payload.data
+        list: action.payload
       }
     case 'TODO_CLEAR':
       return {
