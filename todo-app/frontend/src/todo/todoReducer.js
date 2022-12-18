@@ -1,14 +1,9 @@
 const initialState = {
-  description: 'Initial description',
-  list: [{
-    _id: 1,
-    description: 'Study python',
-    done: true
-  }]
+  description: '', list: []
 }
 
 export default (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'DESCRIPTION_CHANGED':
       return {
         ...state,
@@ -17,7 +12,7 @@ export default (state = initialState, action) => {
     case 'TODO_SEARCHED':
       return {
         ...state,
-        description: action.payload.data
+        list: action.payload.data
       }
     default:
       return state

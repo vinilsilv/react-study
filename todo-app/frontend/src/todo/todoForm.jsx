@@ -29,7 +29,7 @@ class TodoForm extends Component {
       <div role='form' className='todoForm'>
         <Grid cols="12 9 10">
           <input id='description' className="form-control"
-            placeholder="Add a task" value={this.props.description}
+            placeholder="Add a task" value={this.props.description || ''}
             onChange={this.props.changeDescription}
             onKeyUp={this.keyHandler} />
         </Grid>
