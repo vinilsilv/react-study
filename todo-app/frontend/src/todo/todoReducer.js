@@ -14,6 +14,12 @@ export default (state = initialState, action) => {
         ...state,
         list: action.payload.data
       }
+
+    case 'TODO_ADDED':
+      return {
+        ...state,
+        description: ''
+      }
     default:
       return state
   }
