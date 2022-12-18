@@ -22,3 +22,17 @@ export const add = (description) => {
       .then(_ => dispatch(search()))
   }
 }
+
+export const markAsDone = (todo) => {
+  return dispatch => {
+    axios.put(`${URL}/${todo._id}`, { ...todo, done: true })
+      .then(_ => dispatch(search()))
+  }
+}
+
+export const markAsPending = (todo) => {
+  return dispatch => {
+    axios.put(`${URL}/${todo._id}`, { ...todo, done: false })
+      .then(_ => dispatch(search()))
+  }
+}
