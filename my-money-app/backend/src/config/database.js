@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
-module.exports = mongoose.connect('mongodb://localhost/mymoney')
+module.exports = mongoose.connect('mongodb://localhost/mymoney', { useNewUrlParser: true })
 
 mongoose.Error.messages.Number.min = "Informed '{VALUE}' is less than the min value of '{MIN}'."
 mongoose.Error.messages.Number.max = "Informed '{VALUE}' is greater than the max value of '{MAX}'."
