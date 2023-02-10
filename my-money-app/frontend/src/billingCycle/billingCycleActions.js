@@ -23,9 +23,7 @@ export function create(values) {
         dispatch(init())
       })
       .catch(errors => {
-        errors.response.data.errors.forEach(error => {
-          return toastr.error('Error', error)
-        })
+        displayError(errors)
       })
   }
 }
@@ -38,9 +36,7 @@ export function update(values) {
         dispatch(init())
       })
       .catch(errors => {
-        errors.response.data.errors.forEach(error => {
-          return toastr.error('Error', error)
-        })
+        displayError(errors)
       })
   }
 }
@@ -60,4 +56,10 @@ export function init() {
     getList(),
     initialize('billingCycleForm', INITIAL_VALUES)
   ]
+}
+
+function displayError(errors) {
+  errors.response.data.errors.forEach(error => {
+    return toastr.error('Error', error)
+  })
 }
