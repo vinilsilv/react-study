@@ -12,7 +12,7 @@ export default class Dashboard2 extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { credit: 0, debt: 0 }
+    this.state = { credit: 0, debit: 0 }
   }
 
   componentWillMount() {
@@ -21,7 +21,7 @@ export default class Dashboard2 extends Component {
   }
 
   render() {
-    const { credit, debt } = this.state
+    const { credit, debit } = this.state
     return (
       <div>
         <ContentHeader title='Dashboard' small='Version 2.0' />
@@ -30,9 +30,9 @@ export default class Dashboard2 extends Component {
             <ValueBox cols='12 4' color='green' icon='bank'
               value={`R$ ${credit}`} text="Credit Total" />
             <ValueBox cols='12 4' color='red' icon='credit-card'
-              value={`R$ ${debt}`} text="Debt Total" />
+              value={`R$ ${debit}`} text="Debit Total" />
             <ValueBox cols='12 4' color='blue' icon='money'
-              value={`R$ ${credit - debt}`} text="Consolidated Value" />
+              value={`R$ ${credit - debit}`} text="Consolidated Value" />
           </Row>
         </Content>
       </div>
