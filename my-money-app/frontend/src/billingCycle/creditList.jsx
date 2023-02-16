@@ -5,15 +5,18 @@ import Input from '../common/form/input'
 
 class CreditList extends Component {
   renderRows() {
-    return (
-      <tr>
-        <td><Field name="debits[0].name" component={Input}
+    const list = this.props.list || []
+    console.log(list)
+
+    return list.map((item, index) => (
+      <tr key={index}>
+        <td><Field name={`credits[${index}].name`} component={Input}
           placeholder='Insert name' readOnly={this.props.readOnly} /></td>
-        <td><Field name="debits[0].value" component={Input}
+        <td><Field name={`credits[${index}].value`} component={Input}
           placeholder='Insert value' readOnly={this.props.readOnly}  /></td>
         <td></td>
       </tr>
-    )
+    ))
   }
 
   render() {
