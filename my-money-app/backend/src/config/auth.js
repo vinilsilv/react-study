@@ -3,7 +3,7 @@ const env = require('../.env')
 
 module.exports = (req, res, next) => {
   if (req.method === 'OPTIONS') {
-    next(F)
+    next()
   } else {
     const token = req.body.token || req.query.token || req.headers['authorization']
 
