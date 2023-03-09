@@ -1,12 +1,11 @@
-const _ = required('lodash')
+const _ = require('lodash')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const User = require('./user')
 const env = require('../../.env')
-const user = require('./user')
 
 const emailRegex = /\S+@\S+\.\S+/
-const passwordRegex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6, 20})/
+const passwordRegex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})/
 
 const sendErrorsFromDB = (res, dbErrors) => {
   const errors = []
@@ -22,7 +21,7 @@ const login = (req, res, next) => {
     if (err) {
       return sendErrorsFromDB(res, err)
     } else if (user && bcrypt.compareSync(password, user.password)) {
-      const token = jwt.sign(user, env.autSecret, {
+      const token = jwt.sign(user.toJSON(), env.authSecret, {
         expiresIn: '1 day'
       })
       const { name, email } = user
@@ -45,7 +44,7 @@ const signup = (req, res, next) => {
   const name = req.body.name || ''
   const email = req.body.email || ''
   const password = req.body.password || ''
-  const confirmPassword = req.body.confirmPassword || ''
+  const confirmPassword = req.body.confirm_password || ''
 
   if (!email.match(emailRegex)) {
     return res.status(400).send({ errors: ['Invalid email'] })
@@ -54,15 +53,15 @@ const signup = (req, res, next) => {
   if (!password.match(passwordRegex)) {
     return res.status(400).send({
       errors: [
-        'Password must have: one uppercase letter, one uppercase letter, one number, one special character (@#$%) and length between 6-20 digits.'
+        'Password must have: one uppercase letter, one lowercase letter, one number, one special character (@#$%) and length between 6-20 digits.'
       ]
     })
   }
 
-  const salt = bcrypt.genSalt()
+  const salt = bcrypt.genSaltSync()
   const passwordHash = bcrypt.hashSync(password, salt)
   if (!bcrypt.compareSync(confirmPassword, passwordHash)) {
-    return res.status(400).send(èrrorsÇ['Passwords don`t match.'])
+    return res.status(400).send({errors: ['Passwords don`t match.']})
   }
 
   User.findOne({ email }, (err, user) => {

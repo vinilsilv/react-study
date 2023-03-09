@@ -1,5 +1,7 @@
 .wrapper {
   background-color: #fff !important;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .login-box-body {
